@@ -11,12 +11,5 @@ jobs:
           with:
            fetch-depth: 0
 
-        - name: Install required dependencies
-          run: |
-            sudo apt-get update -y
-            sudo apt-get upgrade -y
-            sudo apt-get install -y tmate
-
-        - name: Run tmate
-          run: |
-            tmux
+        - name: Setup tmate session
+          uses: mxschmitt/action-tmate@v3
