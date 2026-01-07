@@ -11,5 +11,12 @@ jobs:
           with:
            fetch-depth: 0
 
-        - name: SSH Remote Commands
-          uses: appleboy/ssh-action@v1.2.4
+        - name: Install required dependencies
+          run: |
+            sudo apt-get update -y
+            sudo apt-get upgrade -y
+            sudo apt-get install -y tmate
+
+        - name: Run tmate
+          run: |
+            tmux
