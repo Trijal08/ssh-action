@@ -1,0 +1,15 @@
+name: GitHub Actions Runner SSH access
+on:
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+          with:
+           fetch-depth: 0
+
+        - name: SSH Remote Commands
+          uses: appleboy/ssh-action@v1.2.4
